@@ -1,8 +1,7 @@
 from datetime import datetime
 import re
 
-# def summ(a,b):
-#     return a+b
+
 class Transaction:
     def __init__(self, dictionary):
         self.to = None
@@ -13,9 +12,7 @@ class Transaction:
             # замена имени ключа, так как from имя метода, который вызывается через точку
             if key == 'from':
                 key = 'out_of'
-            if isinstance(value, (list, tuple)):
-                setattr(self, key, [Transaction(x) if isinstance(x, dict) else x for x in value])
-            else:
+            if not isinstance(value, (list, tuple)):
                 setattr(self, key, Transaction(value) if isinstance(value, dict) else value)
 
     def __repr__(self):
