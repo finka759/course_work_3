@@ -15,7 +15,8 @@ class Transaction:
             if not isinstance(value, (list, tuple)):
                 setattr(self, key, Transaction(value) if isinstance(value, dict) else value)
 
-    def __repr__(self):
+
+    def get_output_str(self):
         return (f"{self.get_date()} {self.get_description()}"
                 f"\n{self.get_from()} -> {self.get_to()} "
                 f"\n{self.operationAmount.amount} {self.operationAmount.currency.name} \n")

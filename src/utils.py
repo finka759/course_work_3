@@ -14,7 +14,8 @@ def select_trs(data_):
 
 def print_trs_list_items(selected_trs_list):
     for selected_trs_list_item in selected_trs_list:
-        print(selected_trs_list_item)
+        print(selected_trs_list_item.get_output_str())
+
 
 def get_data_full(data_):
     return [value for value in data_ if value != {}]

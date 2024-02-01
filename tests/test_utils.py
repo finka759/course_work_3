@@ -22,4 +22,4 @@ def test_select_trs():
                    'description': 'Перевод организации','to': 'Счет 64686473678894779589'}
                   ]
     assert select_trs(test_data1)[0].date == select_trs(test_data2)[0].date
-    assert print_trs_list_items(select_trs(test_data1)) != 0
+    assert print_trs_list_items(select_trs(test_data1)) == print_trs_list_items(select_trs(test_data2))
